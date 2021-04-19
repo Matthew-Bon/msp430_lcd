@@ -12,7 +12,7 @@
  *      2.4 - R/S
  *      2.5 - R/W
  *      1.0 - Enable (if you don't like using 2 ports, 2.6 or 2.7 works well if you don't need to use an external crystal)
- *
+ *      Tested on the Sparkfun LCD-00255 (GMD1602K)
  *
  */
 
@@ -26,8 +26,7 @@ void Write_data(char x); //4 bit data write
 void Write_control(char x); //4bit control write
 void Write_init_control(char x);
 void Clear_display();
-void Return_curser();
-void Write_control_start(char x);
+void Return_cursor();
 void LCD_print(char lcd_string[]);
 
 
