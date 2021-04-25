@@ -39,9 +39,9 @@ void LCD_init()
         __delay_cycles(20000);
         Write_control(0x28);
         Write_control(0x08);//Cursor moves right and DDRAM addr +1
+        Write_control(0x0F);//Enable Display, cursor on, cursor blink
         Write_control(0x02);//Return Cursor to start
         Write_control(0x01);//Clear Display
-        Write_control(0x0F);//Enable Display, cursor on, cursor blink
 
 
 
@@ -113,6 +113,7 @@ void Write_init_control(char x)
         P2OUT &= ~R_S; //select instructions
         P2OUT &= ~R_W;//Select Write
         LCD_TEMP = x;//load temp
+        LCD_TEMP >>= 4; // shift temp by 4
         P2OUT |= LCD_TEMP; //load data from temp
         P1OUT ^= Enable;// enable lcd
         __delay_cycles(20000);//delay

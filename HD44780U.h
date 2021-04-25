@@ -28,6 +28,9 @@ void Write_init_control(char x);
 void Clear_display();
 void Return_cursor();
 void LCD_print(char lcd_string[]);
+void cursor_2nd_line();
+void cursor_middle_1();
+void cursor_middle_2();
 
 
 
